@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Ap</title>
+    <style>
+      h1 {
+        color: blue;
+        text-align: center;
+        padding: 5px;
+        margin: auto;
+        font-style: unset;
+      }
+      strong {
+        font-weight: bold;
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+        font-size: 30px;
+        margin: 0;
+        line-height: 48px;
+        font-weight: 400;
+      }
+      h3 {
+        text-align: center;
+        font-size: x-large;
+        padding: 10px 0;
+        border-radius: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      p {
+        color: grey;
+        font-size: 20px;
+        margin: 0;
+        line-height: 48px;
+        font-weight: 200;
+      }
+      ul {
+        list-style: none;
+        text-align: center;
+        padding: 0px;
+        margin: 0px auto;
+      }
+      li {
+        text-align: center;
+        border-radius: 10px;
+        margin: 0 auto;
+        padding: 10px 0;
+        transition: all 200ms ease-in-out;
+        max-width: 400px;
+      }
+      li:hover {
+        background: #fffbef;
+      }
+      button {
+        padding: 15px 20px;
+        margin: 20px auto;
+        display: block;
+        color: #fff;
+        background: blue;
+        font-size: 15px;
+        border: 1px solid blue;
+        border-radius: 30px;
+        box-shadow: 5px 5px 5px grey;
+      }
+      button:hover {
+        color: blue;
+        background: #fff;
+        transition: all 200ms ease-in-out;
+      }
+      div {
+        text-align: center;
+        color: grey;
+        font-size: x-large;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      🌦<br />
+      Currently 18° in Stambul
+    </h1>
+    <h2>
+      13° /
+      <strong>26°</strong>
+    </h2>
+    <ul>
+      <li>
+        <h3>
+          🌧Tomorrow
+          <p>
+            15° /
+            <strong> 20°</strong>
+          </p>
+        </h3>
+      </li>
+      <li>
+        <h3>
+          🌤 Saturday
+          <p>
+            20° /
+            <strong> 25°</strong>
+          </p>
+        </h3>
+      </li>
+      <li>
+        <h3>
+          ☀ Sunday
+          <p>
+            19° /
+            <strong> 28°</strong>
+          </p>
+        </h3>
+      </li>
+    </ul>
+    <button>Change city</button>
+    <div>Coded by Vicktoria</div>
+    <script>
+      function change() {
+        let city = prompt("What city do you live in?");
+        let temperature = prompt("What temperature is it?");
+        let heading = document.querySelector("h1");
+        if (temperature < 0) {
+          heading.innerHTML =
+            "😥<br/>Currently" + " " + temperature + "°C in" + " " + city;
+        } else {
+          heading.innerHTML =
+            "😎<br/>Currently" + " " + temperature + "°C in" + " " + city;
+        }
+      }
+      let cityButton = document.querySelector("button");
+      cityButton.addEventListener("click", change);
+    </script>
+  </body>
+</html>
